@@ -22,3 +22,17 @@ print(random_image_tensor)
 
 
 
+#Zeros and Ones
+zeros=torch.zeros(size=(3, 4))
+print(zeros)
+ones=torch.ones(size=(3, 4))
+print(ones)
+
+
+#arrange
+arrange_tensor=torch.arange(start=0, end=10, step=2)
+print(arrange_tensor)
+
+#onelikes
+like_ex=torch.ones_like(arrange_tensor)
+print(like_ex)
