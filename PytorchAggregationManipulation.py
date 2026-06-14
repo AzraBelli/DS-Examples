@@ -48,6 +48,30 @@ print(stacked.unsqueeze(1).shape)  # add a dimension in the middle
 print(stacked.unsqueeze(2).shape)  # add a dimension at the end
 print(stacked.squeeze().shape)  # remove all dimensions of size 1
 
+#permute
+x=torch.rand(size=(224,224,3))  # height, width, color channels
+print(x.shape)
+
+x_permuted=x.permute(2,0,1)  # color channels, height, width  x-> (0,1,2) -> (2,0,1)
+print(x_permuted.shape)
+
+#indexing and slicing
+print(x[0,0,0])  # first pixel's red channel
+print(x[0,0])  # first pixel's all channels
+print(x[0])  # first row of pixels
+
+print(x[:,0,0])  # all rows, first column, first channel
+print(x[:,0,1])  # all rows, first column, second channel
+print(x[:,0])  # all rows, first column, all channels
+print(x[0,:])  # first row, all columns, all channels
+
+#random seed
+
+
+torch.manual_seed(42)  # set the random seed for reproducibility
+random_tensor=torch.rand(3,4)
+print(random_tensor) 
+
 
 
 
